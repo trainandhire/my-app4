@@ -21,8 +21,7 @@ export class LoginComponent {
     console.log(this.loginForm.value);
     this._loginService.login(this.loginForm.value).subscribe(
       (data:any)=>{
-        alert("Login Succesfful");
-        // navigte to dash
+        alert("Login Succesfful")        sessionStorage.setItem("my-app-token",data.token)
         this._router.navigateByUrl("/dashboard");
 
       },
