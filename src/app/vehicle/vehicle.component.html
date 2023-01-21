@@ -1,0 +1,107 @@
+<input type="text" [(ngModel)]="term">
+<button (click)="filter()">search</button>
+
+<select [(ngModel)]="column">
+    <option>Vehicle</option>
+    <option>manufacturer</option>
+    <option>model</option>
+    <option>type</option>
+    <option>fuel</option>
+    <option>color</option>
+    <option>image</option>
+    <option>id</option>
+</select>
+
+<select [(ngModel)]="order">
+    <option>asc</option>
+    <option>desc</option>
+</select>
+
+<button (click)="sort()">sort</button>
+
+<table class="table">
+    <thead>
+        <th>Vehicle</th>
+        <th>manufacturer</th>
+        <th>model</th>
+        <th>type</th>
+        <th>fuel</th>
+        <th>color</th>
+        <th>image</th>
+        <th>id</th>
+        <th>actions</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let vehicle of vehicles">
+            <td>{{ vehicle.Vehicle }}</td>
+            <td>{{ vehicle.manufacturer }}</td>
+            <td>{{ vehicle.model }}</td>
+            <td>{{ vehicle.type }}</td>
+            <td>{{ vehicle.fuel }}</td>
+            <td>{{ vehicle.color }}</td>
+            <td>
+                <img src="{{ vehicle.image }}" alt="" width="100px" height="100px">
+            </td>
+            <td>{{ vehicle.id }}</td>
+            <td>
+                <button (click)="delete(vehicle.id)" class="btn btn-danger">delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<select [(ngModel)]="limit">
+    <option>3</option>
+    <option>5</option>
+    <option>10</option>
+    <option>20</option>
+</select>
+
+
+<ul class="pagination">
+    <li class="page-item" (click)="page(1)"><a class="page-link">1</a></li>
+    <li class="page-item" (click)="page(2)"><a class="page-link">2</a></li>
+    <li class="page-item" (click)="page(3)"><a class="page-link">3</a></li>
+    <li class="page-item" (click)="page(4)"><a class="page-link">4</a></li>
+    <li class="page-item" (click)="page(5)"><a class="page-link">5</a></li>
+    <li class="page-item" (click)="page(6)"><a class="page-link">6</a></li>
+  </ul>
+
+
+
+
+
+
+
+
+<!-- 1) Flipkart API:
+-------------
+https://fakestoreapi.com/products
+
+Output:
+---------
+output should be like Flipkart list of products
+
+
+
+2) Mail API:
+----------
+https://jsonplaceholder.typicode.com/todos
+
+Tasks:
+-------
+1) Api integration
+2) visited, unvisited mails
+3) hover css
+
+
+3) Boredom Activity API:
+------------------------
+https://www.boredapi.com/api/activity
+
+
+For now you have integrated array of objects, it is only single object. Same process like previous but 
+
+No need to loop in html, you can directly interpolate.
+
+After integrating the API, whenever you reload the page, new activity will appear on the screen. -->

@@ -1,0 +1,68 @@
+<h1>Calculator</h1>
+
+<label>Number1:</label>
+<input type="number" [(ngModel)]="number1">
+<br>
+
+<label>Number2:</label>
+<input type="number" [(ngModel)]="number2">
+<br>
+
+<button (click)="add()">add</button>
+<button (click)="sub()">sub</button>
+<button (click)="mul()">mul</button>
+<button (click)="div()">div</button>
+
+
+<h1>Result is {{ result }}</h1>
+
+
+<!-- 1) CREATE COMP  -> ng g c rectangle
+2) configure path in app-routing module
+3) dashboard routerLink config
+
+4) html,css
+
+5) tw data binding, eventbinding,  interpolation
+
+
+1) Create square component
+
+    -> input       length
+    -> calculate   area,perimeter
+
+2) Create grade component
+
+    -> input  marks
+    -> calculate grade            
+
+3) Create wish component
+
+    -> input  time
+    -> calculate wishing( GM, GA, GE, GoodNight )
+
+4) Create AdvancedCalculator
+
+    -> input number
+    -> calculate square, cube, EvenOrOdd -->
+
+
+<!-- 
+Services:
+---------
+
+    When should we use services:
+    ----------------------------
+    1) When logic is not related to view.
+    2) When same logic required across multiple components.
+
+
+    Implementation:
+    ---------------
+    1) Create service:
+
+            ng g s data
+
+    2) Inject in component
+
+            constructor( private _dataService: DataService ){ } -->

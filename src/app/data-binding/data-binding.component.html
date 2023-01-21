@@ -1,0 +1,79 @@
+<p>data-binding works!</p>
+
+<!-- interpolation -->
+<h1>My age is {{ age }}.</h1>
+<h1>My name is {{name}}.</h1>
+<h1>Is indian citizen {{ isIndian }}</h1>
+
+<!-- Event binding -->
+<button (click)="test()">submit</button>
+<button (dblclick)="test2()">cancel</button>
+<button (mouseenter)="test3()">check</button>
+<button (mouseleave)="test4()">check2</button>
+<input (keypress)="test5()" type="text">
+<br>
+
+<!-- Two way binding -->
+<label>phone:</label>
+<input type="number" [(ngModel)]="phone">
+<p>{{phone}}</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+DataBinding:
+------------
+    Exchanging data between template and class.
+
+
+    Interpolation:  (class -> template)  (ts->html)
+    --------------
+        Exchanging data between class to template.
+        
+        Implementation:
+
+
+    Event Binding: (template -> class)  (html->ts)
+    -------------
+        Exchanging data between template to class.
+
+        Implementation:
+        ---------------
+
+        Events:
+        -------
+            1) click
+            2) dblclick
+            3) mouseenter
+            4) mouseleave
+            5) keypress
+            6) keyup
+            7) keydown
+             
+
+    Two way data binding: (class   template)  (ts   html)
+    ---------------------
+
+    Implementation:
+    ---------------
+    1) Import FormsModule in app module imports array
+
+             imports:[
+                FormsModule
+             ]
+
+    2) use ngModel at input
+
+             <input type="text" [(ngModel)]="phone"> -->

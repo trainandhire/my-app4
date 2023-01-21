@@ -1,0 +1,15 @@
+.parent{
+    background-color: gray;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 50px;
+    color: red;
+    border: 2px solid black;
+    padding: 20px;
+}

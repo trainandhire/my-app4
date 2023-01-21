@@ -1,0 +1,120 @@
+<h1>Create Vehicle Form</h1>
+
+<form [formGroup]="vehicleForm">
+
+    <label>Vehicle</label>
+    <input type="text" formControlName="Vehicle">
+    <br>
+
+    <label>manufacturer</label>
+    <input type="text" formControlName="manufacturer">
+    <br>
+
+    <label>model</label>
+    <input type="text" formControlName="model">
+    <br>
+
+    <label>type</label>
+    <input type="text" formControlName="type">
+    <br>
+
+    <label>fuel</label>
+    <input type="text" formControlName="fuel">
+    <br>
+
+    <label>color</label>
+    <input type="text" formControlName="color">
+    <br>
+
+    <label>image</label>
+    <input type="text" formControlName="image">
+    <br>
+
+    <button (click)="submit()">submit</button>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Angular Forms:
+--------------
+
+There are two types of forms in angular.
+
+    1) template driven forms
+    2) reactive forms
+
+    -> Template driven forms are old
+       Less features
+       Not suitable for big forms
+
+    Reactive forms:
+    ---------------
+
+        1) Import reactive forms module.
+        2) Create form group in ts
+        3) Create form view in html
+        4) Map the controls
+        5) Check data in console while submit.
+
+        Features:
+        --------- 
+        1) FormGroup
+        2) NestedFormGroup
+        3) FormArray
+        4) Dynamic forms
+        5) FormValidations
+        6) Custom validator
+
+
+        1) FormGroup:
+        ---------------
+
+        TS:
+        ---
+            public vehicleForm:FormGroup = new FormGroup(
+                {
+                    Vehicle: new FormControl(),
+                    color: new FormControl(),
+                }
+            )
+
+        HTML
+        ----
+            <form [formGroup]="vehicleForm">
+
+                <input formControlName="Vehicle">
+
+                <input formControlName="color">
+
+            </form>
+
+
+Git system one time setup: (linking github website and system)
+-------------------------
+
+    git config --global user.name "FIRST_NAME LAST_NAME"
+    git config --global user.email "YOUR EMAIL"
+
+Project one time setup: (linking project th github repository)
+------------------------
+    git init
+    git remote add origin URL
+
+Process:
+--------
+    git add .
+    git commit -m "____"
+    git push
+
