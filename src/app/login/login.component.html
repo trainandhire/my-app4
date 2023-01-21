@@ -1,15 +1,15 @@
 <div class="parent">
 
-    <form action="">
+    <form [formGroup]="loginForm">
         <label for="">Email:</label><br>
-        <input type="text" placeholder="Enter email">
+        <input type="text" placeholder="Enter email" formControlName="email">
         <br>
 
         <label for="">Password:</label><br>
-        <input type="password" placeholder="Enter password">
+        <input type="password" placeholder="Enter password" formControlName="password">
         <br>
 
-        <button routerLink="/dashboard">Login</button>
+        <button (click)="login()">Login</button>
 
     </form>
 
