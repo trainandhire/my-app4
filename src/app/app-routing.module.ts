@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { PhonesComponent } from './phones/phones.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
 
 const routes: Routes = [
@@ -25,7 +26,8 @@ const routes: Routes = [
     {path:'pipes', component: PipesComponent},
     {path:'phones', component: PhonesComponent},
     {path:'vehicle', component: VehicleComponent},
-    {path:'create-vehicle', component: CreateVehicleComponent}
+    {path:'create-vehicle', component: CreateVehicleComponent},
+    {path:'vehicle-details/:id', component: VehicleDetailsComponent}
   ]},
   {path:'', component: LoginComponent},
   {path:'**', component: PagenotfoundComponent}

@@ -45,6 +45,7 @@
             <td>{{ vehicle.id }}</td>
             <td>
                 <button (click)="delete(vehicle.id)" class="btn btn-danger">delete</button>
+                <button (click)="view(vehicle.id)" class="btn btn-secondary">view</button>
             </td>
         </tr>
     </tbody>
@@ -105,3 +106,56 @@ For now you have integrated array of objects, it is only single object. Same pro
 No need to loop in html, you can directly interpolate.
 
 After integrating the API, whenever you reload the page, new activity will appear on the screen. -->
+
+
+<!--
+Angular Communication:
+----------------------
+
+    1) Page Communication
+    2) Component Communication
+    3) Module communication
+
+    1) Page communication
+    ----------------------
+        When two components are in different pages, 
+        we can pass data through route parameters.
+
+       implementation:
+        ---------------
+        1) Configure params in path
+
+            {path:'vehicle-details/:id',comp:vdcomp}
+        
+        2) Set param value from table component.
+
+            this.router.navigateByUrl("/dashboard/vehicle-details/"+id);
+
+        3) Get param value in details component
+            
+            constructor(private _activatedRoute: ActivatedRoute){
+                _activatedRoute.params.subsribe(
+                    (data:any)=>{
+                        alert(data.id);
+                    }
+                )
+            } -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

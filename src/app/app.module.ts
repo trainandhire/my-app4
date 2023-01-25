@@ -17,6 +17,7 @@ import { PhonesComponent } from './phones/phones.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { CreateVehicleComponent } from './create-vehicle/create-vehicle.componen
     PipesComponent,
     PhonesComponent,
     VehicleComponent,
-    CreateVehicleComponent
+    CreateVehicleComponent,
+    VehicleDetailsComponent
   ],
   imports: [
     BrowserModule,
