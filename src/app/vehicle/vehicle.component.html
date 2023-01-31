@@ -192,6 +192,20 @@ After integrating the API, whenever you reload the page, new activity will appea
            --------------
            Making the module download at the initial load of application.
 
+           implementation:
+           ---------------
+           1) Export component in feature module
+
+                exports:[
+                    AboutCompanyComponent
+                ]
+            2) Import feature module in app module.
+
+                imports:[
+                    AboutUsModule
+                ]
+            
+
 
 
 
