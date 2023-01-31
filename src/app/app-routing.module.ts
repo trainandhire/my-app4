@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AboutCompanyComponent } from './about-us/about-company/about-company.component';
 import { AuthenticationGuard } from './authentication.guard';
 import { CalculatorComponent } from './calculator/calculator.component';
@@ -40,8 +40,12 @@ const routes: Routes = [
     {path:'product', component: ProductComponent},
     {path:'cart', component:CartComponent},
     {path:'nav',component:NavComponent},
-    {path:'about-company', component: AboutCompanyComponent}
-    
+    {path:'about-company', component: AboutCompanyComponent},
+    {
+      path: 'contact-us',
+      loadChildren: () => import('./contact-us/contact-us.module').then(m => m.ContactUsModule)
+    }
+
   ]},
   {path:'', component: LoginComponent},
   {path:'**', component: PagenotfoundComponent}

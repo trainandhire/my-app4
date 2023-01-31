@@ -181,7 +181,7 @@ After integrating the API, whenever you reload the page, new activity will appea
             2) set value in service subject
             3) get value from service subject
  -->
-
+<!-- 
     3) Module communication:
        ---------------------
         1) Eager loading
@@ -205,6 +205,29 @@ After integrating the API, whenever you reload the page, new activity will appea
                     AboutUsModule
                 ]
             
+        2) Lazy loading:
+         ---------------
+         Making the module download when ever user access the path.
+
+            implementation:
+            ---------------
+            1) create feature module with routing module
+
+                ng g m contact-us --routing=true
+
+            2) Configure the lazy loading path in app module
+
+                {
+                    path:'contact-us',
+                    loadChildren() : import('MODULE_FILE_NAME').then(m=>MODULE_CLASS_NAME)
+                }
+
+        
+ -->
+
+
+
+
 
 
 
