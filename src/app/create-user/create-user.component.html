@@ -1,0 +1,117 @@
+<h1>Create User Form</h1>
+
+<form [formGroup]="userForm">
+
+    <label>Name:</label>
+    <input type="text" formControlName="name">
+    <div class="text-danger" *ngIf="userForm.get('name')?.touched && userForm.get('name')?.invalid ">
+        <p *ngIf="userForm.get('name')?.errors?.['required']">Name is required</p>
+        <p *ngIf="userForm.get('name')?.errors?.['minlength']">Name should contain atleast 3 charecters.</p>
+    </div>
+
+
+
+
+
+
+    <h6>touched: {{ userForm.get('name')?.touched }}</h6>
+    <h6>untouched: {{ userForm.get('name')?.untouched }}</h6>
+    <h6>dirty: {{ userForm.get('name')?.dirty }}</h6>
+    <h6>pristine: {{ userForm.get('name')?.pristine }}</h6>
+    <h6>valid: {{ userForm.get('name')?.valid }}</h6>
+    <h6>invalid: {{ userForm.get('name')?.invalid }}</h6>
+
+    <h6>value: {{ userForm.get('name')?.value }}</h6>
+    <h6>errors: {{ userForm.get('name')?.errors | json }}</h6>
+    <br>
+
+    <label>Age:</label>
+    <input type="number" formControlName="age">
+    <div class="text-danger" *ngIf="userForm.get('age')?.touched && userForm.get('age')?.invalid ">
+        <p *ngIf="userForm.get('age')?.errors?.['required']">age is required</p>
+        <p *ngIf="userForm.get('age')?.errors?.['min']">age atleast 0 years.</p>
+        <p *ngIf="userForm.get('age')?.errors?.['max']">age atmost 100 years.</p>
+    </div>
+    <br>
+
+    <label>Phone:</label>
+    <input type="number" formControlName="phone">
+    <br>
+
+    <div formGroupName="address">
+
+        <label>State:</label>
+        <select formControlName="state">
+            <option value="TS">Telangana</option>
+            <option value="AP">Andra Pradesh</option>
+        </select>
+        <br>
+
+        <label>Pin:</label>
+        <input type="number" formControlName="pin">
+        <div class="text-danger" *ngIf="userForm.get('address')?.get('pin')?.touched && userForm.get('address')?.get('pin')?.invalid ">
+            <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['required']">pin is required</p>
+            <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['min']">pin atleast 6 num</p>
+            <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['max']">pin atmost 6 num.</p>
+        </div>
+        <br>
+
+    </div>
+
+    <label>type:</label>
+    <label>Day Scholor</label>
+    <input type="radio" name="type" formControlName="type" value="dayScholor">
+    <label>Residential</label>
+    <input type="radio" name="type" formControlName="type" value="residential">
+    <br>
+
+    <div *ngIf="userForm.get('type')?.value=='dayScholor'">
+        <label>Bus Fee:</label>
+        <input type="number" formControlName="busFee">
+        <br>
+    </div>
+
+    <div *ngIf="userForm.get('type')?.value=='residential'">
+        <label>Hostel Fee:</label>
+        <input type="number" formControlName="hostelFee">
+        <br>
+    </div>
+
+    <h1>Cards</h1>
+    <button (click)="add()">add</button>
+    <br>
+    <br>
+
+    <div formArrayName="cards">
+        <div *ngFor="let card of cardsFormArray.controls;let i = index">
+            <div formGroupName="{{i}}">
+
+                <label>Card No:</label>
+                <input type="number" formControlName="cardNo">
+                <br>
+
+                <label>Exprity:</label>
+                <input type="month" formControlName="expiry">
+                <br>
+
+                <label>CVV:</label>
+                <input type="number" formControlName="cvv">
+                <div class="text-danger" *ngIf="cardsFormArray.controls[i]?.get('cvv')?.touched && cardsFormArray.controls[i]?.get('cvv')?.invalid ">
+                    <p *ngIf="cardsFormArray.controls[i]?.get('cvv')?.errors?.['required']">CVV is required</p>
+                    <p *ngIf="cardsFormArray.controls[i]?.get('cvv')?.errors?.['min']">CVV atleast 100.</p>
+                    <p *ngIf="cardsFormArray.controls[i]?.get('cvv')?.errors?.['max']">CVV atmost 999.</p>
+                </div>
+                <br>
+                
+                <button (click)="delete(i)" class="btn btn-danger">delete</button>
+                <hr>
+
+            </div>
+        </div>
+    </div>
+
+    
+    <button (click)="submit()">submit</button>
+
+
+</form>

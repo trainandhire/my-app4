@@ -1,4 +1,4 @@
-<h1>Create Vehicle Form</h1>
+<h1>{{ isEdit? 'Edit vehicle form' : 'Create vehcile form' }}</h1>
 
 <form [formGroup]="vehicleForm">
 
@@ -43,11 +43,8 @@
 
 
 
-
-
-
-
-<!-- Angular Forms:
+<!-- 
+Angular Forms:
 --------------
 
 There are two types of forms in angular.
@@ -98,10 +95,90 @@ There are two types of forms in angular.
 
                 <input formControlName="color">
 
-            </form> -->
+            </form>
 
 
-<!-- Git system one time setup: (linking github website and system)
+        2) Nested Form Group:
+        ---------------------
+
+
+        3) Dynamic forms:
+        -----------------
+
+          <div *ngIf="userForm.get('type')?.value=='dayScholor'">
+
+          </div>
+
+
+        4) Form Array:
+        ---------------
+
+          1) Create formArray in fromGroup.
+
+                cards: new FormArray([]);
+
+          2) Create getter method to access formArray.
+
+                get cardsFormArray(){
+                    return this.userForm.get('cards') as FormArray;
+                }
+
+          3) Create add button and add function
+             push formGroups in formArray
+
+                add(){
+                    this.cardsFormArray.push(
+                        new FormGroup({
+                            cvv:new FormControl()
+                        })
+                    )
+                }
+
+          4) Loop over formArray for froms view.
+
+                <div formArrayName="cards">
+                    <div *ngFor="let card of cardsFormArray.controls; let i=index">
+                        <div formGroupName="{{i}}">
+
+          5) Delete form
+
+                this.cardsFormArray.removeAt(i); -->
+
+<!--         
+    4) Form Validation:
+    --------------------
+
+      ts:
+      ---
+
+        age: new FormControl('',[Validators.required,Validators.min(3)])
+        
+      html:
+      -----
+
+            <div *ngIf="_____?.touched && ______?.invalid">
+
+                <p *ngIf="_____?.errors?.['required']">This field is required</p>
+                <p *ngIf="_____?.errors?.['min']">Minimum 3 chars requried</p>
+            
+            </div>                
+
+        Form:        userForm.get('name')
+        FormGroup:   userForm.get('address')?.get('pin')
+        FormArray:   cardsFormArray.controls[i]?.get('cvv')
+ -->
+
+
+
+
+
+
+
+
+
+
+<!-- 
+Git system one time setup: (linking github website and system)
 -------------------------
 
     git config --global user.name "FIRST_NAME LAST_NAME"
@@ -111,10 +188,56 @@ Project one time setup: (linking project th github repository)
 ------------------------
     git init
     git remote add origin URL
-
+ 
 Process:
 --------
     git add .
     git commit -m "____"
     git push
+
+
+
+Frontend Architecture:
+------------------------
+
+Angular:
+--------
+Angular is a framework to build single page applications(SPA).
+
+        framework: combination of languages and libraries.
+
+            -> html, css, typescript, rxjs, zone.js
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  -->
+
+
+
+
+        Home
+
+        calculator
+
+
+        logout

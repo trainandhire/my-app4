@@ -46,6 +46,8 @@
             <td>
                 <button (click)="delete(vehicle.id)" class="btn btn-danger">delete</button>
                 <button (click)="view(vehicle.id)" class="btn btn-secondary">view</button>
+                <button (click)="edit(vehicle.id)" class="btn btn-secondary">edit</button>
+
             </td>
         </tr>
     </tbody>
@@ -107,9 +109,7 @@ No need to loop in html, you can directly interpolate.
 
 After integrating the API, whenever you reload the page, new activity will appear on the screen. -->
 
-
-<!--
-Angular Communication:
+ <!-- Angular Communication:
 ----------------------
 
     1) Page Communication
@@ -139,18 +139,58 @@ Angular Communication:
                         alert(data.id);
                     }
                 )
-            } -->
+            } 
 
+    2) Component commiunication:
+       -------------------------
 
+            1) parent to child
+            2) child to parent
+            3) sibling communictaion
 
+        1) parent to child:
+           ---------------
 
+            1) create @Input() varaiable in child
 
+                @Input() public a:nubmer = 0;
 
+            2) pass data at child tag as property binding
 
+                <app-child [a]="10"></app-child>
 
+        2) child to parent:
+         -------------------
 
+            1) Create event in child
 
+                @Output() public bEvent:EventEmitter<number> = new EventEmitter();
 
+            2) Emit event in child
+
+                this.bEvent.emit(20);
+
+            3) catch event in parent
+
+                <app-child (bEvent)="catch($event)"></app-child>
+
+        3) Sibling Communication:
+           -----------------------
+
+            1) create common service and add it in every component
+            2) set value in service subject
+            3) get value from service subject
+ -->
+
+    3) Module communication:
+       ---------------------
+        1) Eager loading
+        2) Lazy loading
+        3) Pre loading
+
+        1) Eager loading:
+           --------------
+           Making the module download at the initial load of application.
 
 
 

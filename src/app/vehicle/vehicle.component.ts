@@ -76,6 +76,10 @@ export class VehicleComponent {
     this.router.navigateByUrl("/dashboard/vehicle-details/"+id);
   }
 
+  edit(id:any){
+    this.router.navigateByUrl("/dashboard/edit-vehicle/"+id);
+  }
+
 
 
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { VehicleService } from '../vehicle.service';
 
 @Component({
   selector: 'app-vehicle-details',
@@ -8,11 +9,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class VehicleDetailsComponent {
 
-  constructor(private _activatedRoute: ActivatedRoute) {
+  public vehicle:any={};
+
+  constructor(private _activatedRoute: ActivatedRoute, private _vehicleService:VehicleService) {
     
     _activatedRoute.params.subscribe(
       (data:any)=>{
-        // get specific data from api
+
+        this._vehicleService.getVehicle(data.id).subscribe(
+          (data:any)=>{
+            this.vehicle = data;
+          },
+          (err:any)=>{
+            alert("internal server error.");
+          }
+        )
+        
       }
     )
 

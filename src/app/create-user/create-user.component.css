@@ -1,0 +1,11 @@
+label{
+    width: 150px;
+}
+/* 
+input[type="text"], input[type="number"]{
+    border: 2px solid red;
+} */
+
+.error{
+    color: red;
+}

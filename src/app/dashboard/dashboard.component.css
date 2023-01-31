@@ -10,9 +10,11 @@
     text-align: center;
     color: white;
     padding: 4px;
+    overflow: auto;
+    padding-bottom: 40px;
 }
-h4{
-    height: 30px;
+.left h4{
+    height: 50px;
     margin: 0;
     padding: 10px;
     cursor: pointer;
