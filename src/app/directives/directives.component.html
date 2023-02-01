@@ -64,7 +64,7 @@
         <tr *ngFor="let account of accounts">
             <td>{{ account.createdAt }}</td>
             <td>{{ account.account_name }}</td>
-            <td>{{ account.available_balance }}</td>
+            <td>{{ account.available_balance | price }}</td>
             <td>{{ account.currency }}</td>
             <td>
                 <img src="{{ account.user_image }}" alt="" width="100px" height="100px">

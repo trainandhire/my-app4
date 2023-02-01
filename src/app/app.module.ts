@@ -25,6 +25,8 @@ import { ProductComponent } from './product/product.component';
 import { NavComponent } from './nav/nav.component';
 import { CartComponent } from './cart/cart.component';
 import { AboutUsModule } from './about-us/about-us.module';
+import { PricePipe } from './price.pipe';
+import { ImpDirective } from './imp.directive';
 
 
 @NgModule({
@@ -48,7 +50,9 @@ import { AboutUsModule } from './about-us/about-us.module';
     ChildComponent,
     ProductComponent,
     NavComponent,
-    CartComponent
+    CartComponent,
+    PricePipe,
+    ImpDirective
   ],
   imports: [
     BrowserModule,
