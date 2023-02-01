@@ -11,6 +11,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { HomeComponent } from './home/home.component';
+import { JobsComponent } from './jobs/jobs.component';
 import { LoginComponent } from './login/login.component';
 import { NavComponent } from './nav/nav.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
@@ -41,6 +42,7 @@ const routes: Routes = [
     {path:'cart', component:CartComponent},
     {path:'nav',component:NavComponent},
     {path:'about-company', component: AboutCompanyComponent},
+    {path:'jobs',component:JobsComponent},
     {
       path: 'contact-us',
       loadChildren: () => import('./contact-us/contact-us.module').then(m => m.ContactUsModule)

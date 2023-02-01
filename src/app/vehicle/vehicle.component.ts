@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
+import { Vehicle } from '../vehicle';
 import { VehicleService } from '../vehicle.service';
 
 @Component({
@@ -13,12 +14,12 @@ export class VehicleComponent {
   public column:string = "";
   public order:string="";
   public limit:number=10;
-  public vehicles:any = [];
+  public vehicles:Vehicle[] = [];
 
   constructor(private _vehicleService: VehicleService,
      private router: Router) {  
     this._vehicleService.getVehicles().subscribe(
-      (data:any)=>{
+      (data:Vehicle[])=>{
         this.vehicles = data;
       },
       (err:any)=>{

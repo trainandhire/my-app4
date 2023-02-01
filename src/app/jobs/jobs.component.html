@@ -1,0 +1,16 @@
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>Company Name</th>
+            <th>Pakcage</th>
+            <th>Location</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let job of jobs">
+            <td>{{job.companyName}}</td>
+            <td>{{job.package}}</td>
+            <td>{{job.location}}</td>
+        </tr>
+    </tbody>
+</table>

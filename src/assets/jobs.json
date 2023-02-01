@@ -1,0 +1,17 @@
+[
+    {
+        "companyName":"TCS",
+        "package":10,
+        "location":"Hyderabad"
+    },
+    {
+        "companyName":"CapGEmini",
+        "package":10,
+        "location":"Hyderabad"
+    },
+    {
+        "companyName":"WIpro",
+        "package":10,
+        "location":"Hyderabad"
+    }
+]

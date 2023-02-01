@@ -27,6 +27,7 @@ import { CartComponent } from './cart/cart.component';
 import { AboutUsModule } from './about-us/about-us.module';
 import { PricePipe } from './price.pipe';
 import { ImpDirective } from './imp.directive';
+import { JobsComponent } from './jobs/jobs.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { ImpDirective } from './imp.directive';
     NavComponent,
     CartComponent,
     PricePipe,
-    ImpDirective
+    ImpDirective,
+    JobsComponent
   ],
   imports: [
     BrowserModule,

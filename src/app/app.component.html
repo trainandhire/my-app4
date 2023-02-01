@@ -5,8 +5,10 @@
 <!-- 1) Custom pipe
 2) Custom directive
 3) Custom data type / interface
-4) Interceptor
-5) Custom validator -->
+4) custom api/ mock json
+5) Custom validator 
+6) Interceptor
+-->
 
 
 
@@ -27,11 +29,79 @@
         {{ product.cost | price  }}
  -->
 
+ <!-- 2) Custom Directive:
+    -----------------
+
+        1) Create
+
+            ng g d imp
+
+        2) Implement
+
+            constructor(pricate _elementRef:ElementRef){
+                this._elementRef.nativieElement.style.color = 'red';
+            }
+
+        3) Apply
+
+            <h1 appImp>Calculator</h1>
+ -->
+
+    <!-- 3) Custom DataType / interface / models
+
+
+        1) Create
+ 
+            ng g interface vehicle
+
+        2) implment
+
+            export interface Vehicle {
+                color: string;
+                fule: string;
+            }
+
+        3) apply
+
+            public vehicles:any = [];
+                public vehicles:Vehicle[] = [];
+                public vehicles:Vehicle[] = <Vehicle[]>[]
+
+            public vehicle:any = {};
+                public vehicle:Vehicle = <Vehicle>{}; -->
+
+<!-- 
+        4) MockData / Custom API / MockJSON file:
+        -----------------------------------------
+
+            1) Create json file in assets
+
+                    jobs.json
+
+                    [
+                        {},
+                        {}
+                    ]
+
+            2) use filePath insted of apiURL.
+
+                this._httpClient.get("/assets/jobs.json");
+ -->
+            
 
 
 
 
 
+
+
+
+
+1) UI
+2) model
+3) mock json
+4) service
+5) ts, html
 
 
 
