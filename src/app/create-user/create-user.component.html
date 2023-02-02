@@ -34,6 +34,14 @@
     </div>
     <br>
 
+    <label>Email:</label>
+    <input type="email" formControlName="email">
+    <div class="text-danger" *ngIf="userForm.get('email')?.touched && userForm.get('email')?.invalid ">
+        <p *ngIf="userForm.get('email')?.errors?.['required']">email is required</p>
+        <p *ngIf="userForm.get('email')?.errors?.['domainError']">Use @capgemini.com only</p>
+    </div>
+    <br>
+
     <label>Phone:</label>
     <input type="number" formControlName="phone">
     <br>
@@ -45,6 +53,9 @@
             <option value="TS">Telangana</option>
             <option value="AP">Andra Pradesh</option>
         </select>
+        <div class="text-danger" *ngIf="userForm.get('address')?.get('state')?.touched && userForm.get('address')?.get('state')?.invalid ">
+            <p *ngIf="userForm.get('address')?.get('state')?.errors?.['required']">state is required</p>
+        </div>
         <br>
 
         <label>Pin:</label>

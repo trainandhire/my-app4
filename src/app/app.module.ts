@@ -15,7 +15,7 @@ import { CarsComponent } from './cars/cars.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { PhonesComponent } from './phones/phones.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { CreateUserComponent } from './create-user/create-user.component';
@@ -28,6 +28,7 @@ import { AboutUsModule } from './about-us/about-us.module';
 import { PricePipe } from './price.pipe';
 import { ImpDirective } from './imp.directive';
 import { JobsComponent } from './jobs/jobs.component';
+import { TokenInterceptor } from './token.interceptor';
 
 
 @NgModule({
@@ -64,7 +65,13 @@ import { JobsComponent } from './jobs/jobs.component';
     ReactiveFormsModule,
     AboutUsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

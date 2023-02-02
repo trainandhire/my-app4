@@ -87,8 +87,26 @@
 
                 this._httpClient.get("/assets/jobs.json");
  -->
-            
 
+        <!-- 5) custom validator:
+         ------------------
+
+         1) create
+
+            copy from the existing validator code
+            implement after the class
+            
+            function domainValidator(control: AbstractControl): ValidationErrors | null{
+              
+            }
+
+        2) apply at control
+
+            email: new FormControl('',[validators.required, domainValidator])
+
+        
+         -->
+  
 
 
 
@@ -226,3 +244,43 @@ FrontEnd Application Architecture:
 
 
 
+Interceptor:
+------------
+
+    Interceptor is the common place for all the reqests and responses.
+
+
+    Implementation:
+    ---------------
+    1) create
+
+        ng g interceptor token
+
+    2) implement
+
+        intercept(reqest,next){
+
+            vat token = sessionStorage.getItem('my-app-token')
+
+            if(token){
+                reqest = request.clone({
+                    setHeaders:{
+                        'my-app-token': token
+                    }
+                })
+            }
+
+        }
+
+    3) apply
+
+        provide in app module providers
+
+        providers:[
+            {
+                provide: HTTP_INTERCEPTORS,
+                useClass: TokenInterceptor,
+                multi: true
+            }
+
+        ]
